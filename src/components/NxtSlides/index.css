@@ -78,3 +78,12 @@
   display: flex;
   min-height: 70vh;
 }
+
+.hed-slide {
+  font-family: 'Bree Serif';
+  color: blue;
+}
+
+.desc-slide {
+  font-family: 'bree Serif';
+}

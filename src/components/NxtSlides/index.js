@@ -49,6 +49,16 @@ class NxtSlides extends Component {
     activeId: initialSlidesList[0].id,
     isHeadingEditing: false,
     isDescriptionEditing: false,
+    headingValue: initialSlidesList[0].heading,
+    descriptionValue: initialSlidesList[0].description,
+  }
+
+  changeHeadingValue = event => {
+    this.setState({headingValue: event.target.value})
+  }
+
+  changeDescriptionValue = e => {
+    this.setState({descriptionValue: e.target.value})
   }
 
   changeActiveId = e => {
@@ -102,7 +112,10 @@ class NxtSlides extends Component {
       return slide
     })
     console.log(list)
-    this.setState({slidesList: list})
+    this.setState(prev => ({
+      slidesList: list,
+      isHeadingEditing: !prev.isHeadingEditing,
+    }))
   }
 
   descriptionEditable = () => {
@@ -122,7 +135,10 @@ class NxtSlides extends Component {
       return slide
     })
     console.log(list)
-    this.setState({slidesList: list})
+    this.setState(prev => ({
+      slidesList: list,
+      isDescriptionEditing: !prev.isDescriptionEditing,
+    }))
   }
 
   addNewSlide = () => {
@@ -144,6 +160,8 @@ class NxtSlides extends Component {
       activeId,
       isHeadingEditing,
       isDescriptionEditing,
+      headingValue,
+      descriptionValue,
     } = this.state
     const currSlide = slidesList.filter(slide => slide.id === activeId)[0]
     console.log(currSlide)
@@ -174,22 +192,26 @@ class NxtSlides extends Component {
                 {isHeadingEditing ? (
                   <input
                     type="text"
-                    onChange={this.changeHeading}
-                    value={heading}
-                    onBlur={this.headingEditable}
+                    onChange={this.changeHeadingValue}
+                    value={headingValue}
+                    onBlur={this.changeHeading}
                   />
                 ) : (
-                  <h1 onClick={this.headingEditable}>{heading}</h1>
+                  <h1 onClick={this.headingEditable} className="hed-slide">
+                    {heading}
+                  </h1>
                 )}
                 {isDescriptionEditing ? (
                   <input
                     type="text"
-                    onChange={this.changeDescription}
-                    value={description}
-                    onBlur={this.descriptionEditable}
+                    onChange={this.changeDescriptionValue}
+                    value={descriptionValue}
+                    onBlur={this.changeDescription}
                   />
                 ) : (
-                  <p onClick={this.descriptionEditable}>{description}</p>
+                  <p onClick={this.descriptionEditable} className="desc-slide">
+                    {description}
+                  </p>
                 )}
               </div>
             </div>
