@@ -1,0 +1,11 @@
+.header {
+  background-color: #dbeafe;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 100px;
+  margin-right: 20px;
+}

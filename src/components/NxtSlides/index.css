@@ -1,0 +1,80 @@
+.button-container {
+  margin: 20px;
+}
+.new-button {
+  background-color: #dbeafe;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  border: 0px;
+  padding: 5px 20px;
+}
+
+.plus-icon {
+  width: 20px;
+  margin-right: 5px;
+}
+.active-slide-card {
+  background-color: #dbeafe;
+}
+
+.slide-card-li {
+  display: flex;
+  width: 100%;
+}
+
+.slide-card {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-slides/nxt-slides-bg.png');
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: 25%;
+}
+
+.slides-container {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
+  overflow-y: auto;
+  height: 100%;
+  font-family: 'Bree Serif';
+}
+
+.heading {
+  font-size: 20px;
+  color: #0967d2;
+}
+
+.description {
+  font-size: 10px;
+}
+
+.active-card-container {
+  width: 70vw;
+  padding: 30px;
+}
+
+.active-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/nxt-slides/nxt-slides-bg.png');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  /* box-shadow: 2px 2px 2px 2px #dbeafe; */
+  border: 4px solid #dbeafe;
+  border-radius: 20px;
+}
+
+.container {
+  display: flex;
+  min-height: 70vh;
+}
